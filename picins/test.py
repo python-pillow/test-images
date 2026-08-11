@@ -7,7 +7,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = False
 files = ["mandel.msp", "mexhat1.msp", "mexhat2.msp"]
 
 
-def test(f):
+def test(f: str) -> None:
     try:
         im = Image.open(f)
         im.show()
