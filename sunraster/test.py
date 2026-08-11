@@ -20,8 +20,8 @@ files = [
 
 def test(f):
     try:
-        im = Image.open(f)
-        im.show()
+        with Image.open(f) as im:
+            im.show()
     except Exception:
         print("Could not open %s" % f)
 

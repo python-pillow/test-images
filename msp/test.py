@@ -20,9 +20,9 @@ files = [
 
 def test(f):
     try:
-        im = Image.open(f)
-        im.show()
-        im.save(f.replace(".MSP", ".png"), format="PNG")
+        with Image.open(f) as im:
+            im.show()
+            im.save(f.replace(".MSP", ".png"), format="PNG")
     except Exception:
         print("Could not open %s" % f)
 
