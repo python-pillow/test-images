@@ -9,9 +9,9 @@ files = ["mandel.msp", "mexhat1.msp", "mexhat2.msp"]
 
 def test(f):
     try:
-        im = Image.open(f)
-        im.show()
-        im.save(f.replace(".msp", ".png"), format="PNG")
+        with Image.open(f) as im:
+            im.show()
+            im.save(f.replace(".msp", ".png"), format="PNG")
     except Exception:
         print("Could not open %s" % f)
 
