@@ -18,7 +18,7 @@ files = [
 ]
 
 
-def test(f):
+def test(f: str) -> None:
     try:
         with Image.open(f) as im:
             im.show()
